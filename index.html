@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>MaidMaid</title>
+    <link rel="stylesheet" href="style.css" />
+    <!-- Flatpickr CSS -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css"
+    />
+
+    <!-- Flatpickr JS -->
+    <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+  </head>
+  <body>
+    <!-- header -->
+    <header class="header">
+      <section class="container">
+        <div class="logo">
+          <a href="#about">MaidMaid</a>
+        </div>
+        <button class="menu-btn">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="16"
+            height="16"
+            fill="currentColor"
+            class="bi bi-list"
+            viewBox="0 0 16 16"
+          >
+            <path
+              fill-rule="evenodd"
+              d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5"
+            />
+          </svg>
+          <svg
+            class="none"
+            xmlns="http://www.w3.org/2000/svg"
+            width="16"
+            height="16"
+            fill="currentColor"
+            class="bi bi-x"
+            viewBox="0 0 16 16"
+          >
+            <path
+              d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708"
+            />
+          </svg>
+        </button>
+
+        <!--nav bar-->
+        <nav class="menu is-active">
+          <a href="#">Home</a>
+          <a href="#">How it Works</a>
+          <a href="#services">Why Choose Us</a>
+          <button class="book-btn">Book Now</button>
+        </nav>
+      </section>
+    </header>
+
+    <!--home-->
+
+    <section id="home" class="home full-lg-screen">
+      <article class="container">
+        <div class="home-content">
+          <p>MaidMaid - House Cleaning services</p>
+          <h1>LET US DO THE DIRTY WORK</h1>
+          <p>
+            From kitchens to carpets, we leave every room sparkling and
+            stress-free. Book a trusted reliable cleaner with flexible
+            scheduling and flat-rate pricing.
+          </p>
+
+          <div class="home-buttons">
+            <button class="book-btn">Book Now</button>
+            <a class="btn" href="#">How it Works</a>
+          </div>
+        </div>
+
+        <div class="home-image">
+          <img src="assets/cleaning-service.jpeg" alt="Cleaning Service" />
+        </div>
+      </article>
+    </section>
+
+    <!-- booking interface -->
+
+    <!-- Middle Section with nav-tabs -->
+    <section id="middle">
+      <div class="nav-tabs">
+        <div class="tab-header">
+          <h4>
+            <span class="tab-icon">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="16"
+                height="16"
+                fill="currentColor"
+                class="bi bi-plus-circle-dotted"
+                viewBox="0 0 16 16"
+              >
+                <path
+                  d="M8 0q-.264 0-.523.017l.064.998a7 7 0 0 1 .918 0l.064-.998A8 8 0 0 0 8 0M6.44.152q-.52.104-1.012.27l.321.948q.43-.147.884-.237L6.44.153zm4.132.271a8 8 0 0 0-1.011-.27l-.194.98q.453.09.884.237zm1.873.925a8 8 0 0 0-.906-.524l-.443.896q.413.205.793.459zM4.46.824q-.471.233-.905.524l.556.83a7 7 0 0 1 .793-.458zM2.725 1.985q-.394.346-.74.74l.752.66q.303-.345.648-.648zm11.29.74a8 8 0 0 0-.74-.74l-.66.752q.346.303.648.648zm1.161 1.735a8 8 0 0 0-.524-.905l-.83.556q.254.38.458.793l.896-.443zM1.348 3.555q-.292.433-.524.906l.896.443q.205-.413.459-.793zM.423 5.428a8 8 0 0 0-.27 1.011l.98.194q.09-.453.237-.884zM15.848 6.44a8 8 0 0 0-.27-1.012l-.948.321q.147.43.237.884zM.017 7.477a8 8 0 0 0 0 1.046l.998-.064a7 7 0 0 1 0-.918zM16 8a8 8 0 0 0-.017-.523l-.998.064a7 7 0 0 1 0 .918l.998.064A8 8 0 0 0 16 8M.152 9.56q.104.52.27 1.012l.948-.321a7 7 0 0 1-.237-.884l-.98.194zm15.425 1.012q.168-.493.27-1.011l-.98-.194q-.09.453-.237.884zM.824 11.54a8 8 0 0 0 .524.905l.83-.556a7 7 0 0 1-.458-.793zm13.828.905q.292-.434.524-.906l-.896-.443q-.205.413-.459.793zm-12.667.83q.346.394.74.74l.66-.752a7 7 0 0 1-.648-.648zm11.29.74q.394-.346.74-.74l-.752-.66q-.302.346-.648.648zm-1.735 1.161q.471-.233.905-.524l-.556-.83a7 7 0 0 1-.793.458zm-7.985-.524q.434.292.906.524l.443-.896a7 7 0 0 1-.793-.459zm1.873.925q.493.168 1.011.27l.194-.98a7 7 0 0 1-.884-.237zm4.132.271a8 8 0 0 0 1.012-.27l-.321-.948a7 7 0 0 1-.884.237l.194.98zm-2.083.135a8 8 0 0 0 1.046 0l-.064-.998a7 7 0 0 1-.918 0zM8.5 4.5a.5.5 0 0 0-1 0v3h-3a.5.5 0 0 0 0 1h3v3a.5.5 0 0 0 1 0v-3h3a.5.5 0 0 0 0-1h-3z"
+                />
+              </svg>
+            </span>
+            Schedule your service
+          </h4>
+        </div>
+
+        <!-- Location -->
+        <button class="tab-button" id="openLocationModal">
+          <span id="locationLabel">Locations</span>
+          <span class="arrow">&#9662;</span>
+        </button>
+
+        <!-- Date -->
+        <button class="tab-button" id="openDateModal">
+          <span id="dateLabel">Date</span> <span class="arrow">&#9662;</span>
+        </button>
+
+        <!-- Time -->
+        <button class="tab-button" id="openTimeModal">
+          <span id="timeLabel">Time</span> <span class="arrow">&#9662;</span>
+        </button>
+
+        <!-- Book -->
+        <button class="book-btn">Book Now</button>
+      </div>
+    </section>
+
+    <!-- Location Modal -->
+    <div class="modal" id="locationModal">
+      <div class="modal-content">
+        <span class="close-btn" data-close="locationModal">&times;</span>
+        <h3>Select a City</h3>
+        <ul>
+          <li>New York</li>
+          <li>Los Angeles</li>
+          <li>Chicago</li>
+          <li>Houston</li>
+          <li>Miami</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Date Modal -->
+    <div class="modal" id="dateModal">
+      <div class="modal-content">
+        <span class="close-btn" data-close="dateModal">&times;</span>
+        <h3>Select a Date</h3>
+        <input
+          type="text"
+          id="flatpickrInput"
+          class="date-picker"
+          placeholder="Select a date"
+        />
+      </div>
+    </div>
+
+    <!-- Time Modal -->
+    <div class="modal" id="timeModal">
+      <div class="modal-content">
+        <span class="close-btn" data-close="timeModal">&times;</span>
+        <h3>Select a Time</h3>
+        <ul class="time-list" id="timeList">
+          <!-- JavaScript will populate this -->
+        </ul>
+      </div>
+    </div>
+
+    <!-- section about -->
+    <section class="about" id="about">
+      <article class="about-grid">
+        <!-- First row -->
+        <div class="empty-div"></div>
+
+        <!-- Second row -->
+        <aside class="about-info">
+          <h1>How it Works?</h1>
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Maiores
+            aliquid sit saepe labore reiciendis vero magnam dignissimos sed
+            tenetur, possimus pariatur neque nobis in dolorem vel laborum,
+            repudiandae quaerat quia!
+          </p>
+        </aside>
+
+        <!-- Third row (3 columns) -->
+        <div class="social-row">
+          <div class="social-container">
+            <aside class="social">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="50"
+                height="50"
+                fill="currentColor"
+                class="bi bi-geo-alt-fill"
+                viewBox="0 0 16 16"
+              >
+                <path
+                  d="M8 16s6-5.686 6-10A6 6 0 0 0 2 6c0 4.314 6 10 6 10m0-7a3 3 0 1 1 0-6 3 3 0 0 1 0 6"
+                />
+              </svg>
+              <h5>Choose Location</h5>
+              <small
+                >We serve multiple areas, just enter your address to get
+                started.</small
+              >
+            </aside>
+            <svg
+              class="s-connector"
+              viewBox="0 0 100 100"
+              preserveAspectRatio="none"
+            >
+              <path
+                d="M0,50 C40,0 60,100 100,50"
+                stroke="#999"
+                fill="none"
+                stroke-width="2"
+              />
+            </svg>
+          </div>
+
+          <div class="social-container">
+            <aside class="social">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="50"
+                height="50"
+                fill="currentColor"
+                class="bi bi-calendar-check-fill"
+                viewBox="0 0 16 16"
+              >
+                <path
+                  d="M4 .5a.5.5 0 0 0-1 0V1H2a2 2 0 0 0-2 2v1h16V3a2 2 0 0 0-2-2h-1V.5a.5.5 0 0 0-1 0V1H4zM16 14V5H0v9a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2m-5.146-5.146-3 3a.5.5 0 0 1-.708 0l-1.5-1.5a.5.5 0 0 1 .708-.708L7.5 10.793l2.646-2.647a.5.5 0 0 1 .708.708"
+                />
+              </svg>
+              <h5>Choose Location</h5>
+              <small
+                >We serve multiple areas, just enter your address to get
+                started.</small
+              >
+            </aside>
+            <svg
+              class="s-connector"
+              viewBox="0 0 100 100"
+              preserveAspectRatio="none"
+            >
+              <path
+                d="M0,50 C40,0 60,100 100,50"
+                stroke="#999"
+                fill="none"
+                stroke-width="2"
+              />
+            </svg>
+          </div>
+
+          <div class="social-container">
+            <aside class="social">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="50"
+                height="50"
+                fill="currentColor"
+                class="bi bi-credit-card-2-back-fill"
+                viewBox="0 0 16 16"
+              >
+                <path
+                  d="M0 4a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v5H0zm11.5 1a.5.5 0 0 0-.5.5v1a.5.5 0 0 0 .5.5h2a.5.5 0 0 0 .5-.5v-1a.5.5 0 0 0-.5-.5zM0 11v1a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-1z"
+                />
+              </svg>
+              <h5>Pay Fee</h5>
+              <small
+                >Secure your booking with a quick upfront payment. This confirms
+                your appointment and gets our team ready.</small
+              >
+            </aside>
+            <!-- No connector here -->
+          </div>
+        </div>
+      </article>
+    </section>
+
+    <script src="script.js"></script>
+  </body>
+</html>

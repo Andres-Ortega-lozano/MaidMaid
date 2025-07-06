@@ -1,0 +1,550 @@
+/* CSS Reset */
+:root {
+  --first-color: #607d8b;
+  --Second-color: #00bcd4;
+  --white-color: rgb(255, 255, 255);
+  --black-color: rgb(0, 0, 0);
+  --light-gray-color: rgb(219, 218, 218);
+  --dark-gray-color: #a3a1a1;
+  --link-color: rgb(80, 150, 230);
+  --header-height: 5rem;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html,
+body {
+  height: 100%;
+  font-family: sans-serif;
+}
+
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+}
+
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+ul,
+ol {
+  list-style: none;
+}
+
+a {
+  color: var(--link-color);
+  transition: all 0.5s ease-out;
+  font-size: small;
+}
+
+a:hover {
+  opacity: 0.7;
+}
+
+h1 {
+  margin: 0;
+  font-size: 2rem;
+}
+
+h2 {
+  margin: 0;
+  font-size: 1.5rem;
+}
+
+h3 {
+  margin: 0;
+  font-size: 1.25rem;
+}
+
+h4 {
+  margin: 0;
+  font-size: 1rem;
+}
+
+h5 {
+  margin: 0;
+  font-size: 0.85rem;
+}
+
+h6 {
+  margin: 0;
+  font-size: 0.7rem;
+}
+
+p {
+  line-height: 1.6;
+}
+
+.btn {
+  /***** this is for all the link btns in the document *******/
+  border-radius: 0.5rem;
+  padding: 1rem;
+  display: inline-block;
+  width: 200px;
+  font-weight: bold;
+  text-align: center;
+  text-decoration: none;
+  color: var(--white-color);
+  background-color: var(--first-color);
+}
+
+.container {
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 100%;
+}
+
+.header {
+  /***mobile version***/
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  z-index: 999;
+  width: 100%;
+  height: var(--header-height);
+  background-color: var(--first-color);
+}
+
+.header > .container {
+  padding: 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo a {
+  color: var(--black-color);
+  font-size: 1.5rem;
+  text-decoration: none;
+  margin-left: 3rem;
+  background-color: rgb(220, 212, 212);
+  border-radius: 5%;
+  padding: 0.5rem;
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+    "Lucida Sans", Arial, sans-serif;
+}
+
+/********* nav bar menu mobile version*****/
+.menu-btn {
+  outline: thin solid var(--first-color);
+  border: 0;
+  cursor: pointer;
+  background-color: var(--Second-color);
+  margin-right: 1rem;
+}
+
+.menu-btn svg {
+  fill: var(--first-color);
+}
+
+.menu {
+  position: fixed;
+  left: 0;
+  bottom: var(--header-height);
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  background-color: var(--first-color);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.5s ease;
+}
+
+.menu a {
+  padding: 1rem;
+  font-size: 1.5rem;
+  font-weight: bold;
+  text-align: center;
+  text-decoration: none;
+  color: var(--white-color);
+}
+
+.menu a:first-of-type {
+  color: var(--black-color);
+}
+
+.menu a:hover {
+  color: var(--white-color);
+  background-color: var(--first-color);
+}
+
+.menu.is-active {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.none {
+  display: none !important;
+}
+/********* nav bar menu desktop version*****/
+@media screen and (min-width: 1024px) {
+  .menu-btn {
+    display: none;
+  }
+
+  .menu {
+    position: static;
+    width: auto;
+    flex-direction: row;
+    opacity: 1;
+    pointer-events: auto;
+    margin-right: 3rem;
+  }
+  .menu a {
+    padding: 0 1rem;
+  }
+  .menu a:hover {
+    background-color: transparent;
+  }
+}
+@media screen and (min-width: 1024px) {
+  .header {
+    position: sticky;
+    top: 0;
+    padding: 0.5rem;
+    border-bottom: 1px solid rgb(99, 98, 98);
+  }
+}
+/***here ends header*****/
+
+/****** home *****/
+
+#home {
+  color: rgb(255, 255, 255);
+}
+#home a {
+  color: rgb(255, 255, 255);
+  background-color: transparent;
+}
+
+.home {
+  display: flex;
+  align-items: center;
+  min-height: 100vh;
+  background-color: var(--first-color);
+}
+
+.container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  gap: 2rem;
+}
+
+.home-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.home-buttons {
+  display: flex;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.home-image img {
+  width: 100%;
+  height: 800px;
+  object-fit: cover;
+  border-radius: 8px;
+  margin-top: 5%;
+  margin-left: 3%;
+}
+.home-content p,
+.home-content h1 {
+  margin-bottom: 4rem;
+  padding: 0 3rem;
+}
+
+.home-buttons {
+  margin-top: 3rem;
+  padding: 0 3rem;
+}
+
+/* home booking interface */
+
+/* Ensure no margin on top/bottom of adjacent sections */
+#home,
+#about {
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Overlapping middle section */
+#middle {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: fit-content;
+
+  margin-top: -60px;
+  margin-bottom: -10px;
+  z-index: 2;
+}
+
+/* Tabs container */
+.nav-tabs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0px 60px;
+  background-color: var(--light-gray-color);
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+  max-width: 1000px;
+  width: 100%;
+  justify-content: center;
+  z-index: 2;
+}
+
+.tab-icon svg {
+  color: var(--first-color);
+  stroke: var(--first-color); /* adds stroke */
+  stroke-width: 1;
+}
+
+/* Header inside nav-tabs */
+.tab-header {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.tab-header h4 {
+  font-size: 1.4rem;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.tab-icon svg {
+  vertical-align: middle;
+}
+
+/* Buttons */
+.tab-button {
+  background-color: var(--light-gray-color);
+  border: none;
+  border-left: 1px solid var(--black-color);
+  padding: 12px 20px;
+  border-radius: 6px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 16px;
+  min-width: 180px;
+  justify-content: space-between;
+  white-space: nowrap;
+  transition: all 0.2s ease-in-out;
+}
+.book-btn {
+  background-color: var(--white-color);
+  border: none;
+  border-left: 1px solid var(--black-color);
+  padding: 12px 20px;
+  border-radius: 6px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 16px;
+  min-width: 100px;
+  justify-content: space-between;
+  white-space: nowrap;
+  transition: all 0.2s ease-in-out;
+}
+
+/* Remove left border from first and last buttons */
+.nav-tabs > .tab-button:first-of-type,
+.nav-tabs > .book-btn:last-of-type {
+  border-left: none;
+}
+
+.tab-button:hover,
+.book-btn:hover {
+  background-color: var(--dark-gray-color);
+  color: var(--white-color);
+  transition: all 0.4s ease-out;
+}
+
+.arrow {
+  font-size: 12px;
+}
+
+/* Modal booking styles */
+.modal {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.4);
+  z-index: 1000;
+  justify-content: center;
+  align-items: center;
+}
+
+.modal-content {
+  background-color: white;
+  padding: 20px;
+  border-radius: 6px;
+  min-width: 300px;
+  max-width: 90%;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  position: relative;
+}
+
+.modal-content h3 {
+  margin-top: 0;
+}
+
+.modal-content ul {
+  list-style: none;
+  padding: 0;
+  margin: 10px 0 0 0;
+}
+
+.modal-content ul li {
+  padding: 8px;
+  cursor: pointer;
+}
+
+.modal-content ul li:hover {
+  background-color: #f0f0f0;
+}
+
+.close-btn {
+  position: absolute;
+  top: 10px;
+  right: 12px;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+.date-picker {
+  margin-top: 10px;
+  width: 100%;
+  padding: 10px;
+  font-size: 16px;
+}
+
+.time-list {
+  max-height: 200px;
+  overflow-y: auto;
+}
+
+.book-btn:hover {
+  background-color: #a3a1a1;
+}
+
+/* Responsive phone */
+@media (max-width: 600px) {
+  .nav-tabs {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .tab-button {
+    width: 100%;
+    justify-content: space-between;
+  }
+}
+
+/* section about */
+
+.about-grid {
+  display: grid;
+  grid-template-rows: auto auto auto;
+  row-gap: 2rem;
+}
+
+/* Row 1 */
+.empty-div {
+  height: 150px;
+  width: 100%;
+  background-color: var(--dark-gray-color);
+  grid-row: 1;
+  margin-top: -258px;
+}
+
+/* Row 2 */
+.about-info {
+  text-align: center;
+  grid-row: 2;
+
+  margin-top: -20px;
+}
+
+.about-info h1,
+p {
+  margin-bottom: 4rem;
+}
+
+/* Row 3 */
+
+.social-container {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex: 1;
+}
+
+.s-connector {
+  position: absolute;
+  top: 50%;
+  left: 70%;
+  width: 250px;
+  height: 100px;
+  transform: translateY(-50%);
+  z-index: 0;
+  pointer-events: none;
+}
+
+.social-row {
+  grid-row: 3;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* 3 equal columns */
+  gap: 1rem;
+  width: 100%; /* ensure full width */
+}
+
+.social {
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* centers children horizontally */
+  text-align: center; /* centers text inside h5 and small */
+  padding: 1rem;
+  gap: 1rem;
+
+  width: 80%;
+}
