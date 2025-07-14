@@ -1,8 +1,9 @@
 /* CSS Reset */
 :root {
-  --first-color: #607d8b;
+  --first-color: #607D8B;
   --Second-color: #00bcd4;
   --white-color: rgb(255, 255, 255);
+  --light-white-color: #F5F5F5;
   --black-color: rgb(0, 0, 0);
   --light-gray-color: #f5f5f5;
   --dark-gray-color: #a3a1a1;
@@ -118,20 +119,20 @@ p {
 .header {
   position: sticky;
   top: 0;
-  padding: 0.5rem;
-  border-bottom: 1px solid rgb(99, 98, 98);
+  /* padding: 0.5rem; */
+  /* border-bottom: 1px solid rgb(99, 98, 98); */
   background-color: var(--first-color);
   z-index: 999;
 }
 
 .header > .container {
-  padding: 1rem;
+  padding: 1rem 3rem;
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
 
-.logo a {
+/* .logo a {
   color: var(--black-color);
   font-size: 1.5rem;
   text-decoration: none;
@@ -141,7 +142,11 @@ p {
   padding: 0.5rem;
   font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
     "Lucida Sans", Arial, sans-serif;
-}
+} */
+ .logo a img {
+  width: 140px;
+  height: auto;
+ }
 
 .menu-btn svg {
   fill: var(--first-color);
@@ -158,24 +163,29 @@ p {
   opacity: 0;
   pointer-events: none;
   transition: opacity 0.5s ease;
+  align-items: center;
 }
 
 .menu a {
-  padding: 1rem;
-  font-size: 1.5rem;
-  font-weight: bold;
+  padding: 0 1.2rem;
+  font-size: 1.0rem;
+  font-weight: 100;
   text-align: center;
   text-decoration: none;
-  color: var(--white-color);
+  opacity: 0.7;
+  color: var(--light-white-color);
 }
 
 .menu a:first-of-type {
-  color: var(--black-color);
+  color: var(--white-color);
+  opacity: 1;
+  font-weight: 500;
 }
 
 .menu a:hover {
   color: var(--white-color);
   background-color: var(--first-color);
+  opacity: 1;
 }
 
 .menu.is-active {
@@ -198,10 +208,9 @@ p {
   flex-direction: row;
   opacity: 1;
   pointer-events: auto;
-  margin-right: 3rem;
 }
 .menu a {
-  padding: 0 1rem;
+  /* padding: 0 1rem; */
 }
 .menu a:hover {
   background-color: transparent;
@@ -253,12 +262,11 @@ p {
 }
 
 .home-image img {
-  width: 100%;
+  min-width: 120%;
   height: 100%;
   object-fit: cover;
-  margin-top: 15%;
-
-  border-radius: 8px;
+  margin-top: 10%;
+  border-radius: 3rem 0 0 3rem;
 }
 
 .home-content {
@@ -275,7 +283,7 @@ p {
 
 .home-content p,
 .home-content h1 {
-  margin-bottom: 4rem;
+  /* margin-bottom: 4rem; */
   padding: 0 3rem;
 }
 
@@ -359,10 +367,10 @@ p {
 }
 .book-btn {
   background-color: var(--white-color);
+  color: var(--first-color);
   border: none;
-  border-left: 1px solid var(--black-color);
-  padding: 12px 20px;
-  border-radius: 6px;
+  padding: 12px 25px;
+  border-radius: 10px;
   cursor: pointer;
   display: flex;
   align-items: center;
@@ -382,9 +390,10 @@ p {
 
 .tab-button:hover,
 .book-btn:hover {
-  background-color: var(--dark-gray-color);
+  background-color: var(--black-color);
   color: var(--white-color);
   transition: all 0.4s ease-out;
+  box-shadow: rgba(0, 0, 0, 0.9) 0px 7px 29px 0px;
 }
 
 .arrow {
@@ -454,9 +463,9 @@ p {
   overflow-y: auto;
 }
 
-.book-btn:hover {
+/* .book-btn:hover {
   background-color: #a3a1a1;
-}
+} */
 
 /************************************************* SECTION ABOUT ****************************************/
 
