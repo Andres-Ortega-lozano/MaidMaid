@@ -1,4 +1,4 @@
-/*--------- menu btn ---------*/
+/*--------- menu btn for MOBILE  ---------*/
 
 ((d)=>{
     const btnMenu = d.querySelector(".menu-btn"),
@@ -115,3 +115,156 @@
       timeList.appendChild(li);
     }
   }
+
+
+
+  // REVIEW SECTION
+
+  const reviewsData = [
+    {
+      name: "Emily Clark",
+      avatar: "https://randomuser.me/api/portraits/women/45.jpg",
+      stars: 5,
+      text: "Amazing service, very professional and helpful!"
+    },
+    {
+      name: "James Bennett",
+      avatar: "https://randomuser.me/api/portraits/men/32.jpg",
+      stars: 4,
+      text: "Great experience overall. Would recommend!"
+    },
+    {
+      name: "Sofia Martinez",
+      avatar: "https://randomuser.me/api/portraits/women/68.jpg",
+      stars: 5,
+      text: "Exceeded all my expectations. Fantastic!"
+    },
+    {
+      name: "Liam Johnson",
+      avatar: "https://randomuser.me/api/portraits/men/85.jpg",
+      stars: 4,
+      text: "Solid work and excellent communication!"
+    }
+    ,
+    {
+      name: "Sofia Martinez",
+      avatar: "https://randomuser.me/api/portraits/women/68.jpg",
+      stars: 5,
+      text: "Exceeded all my expectations. Fantastic!"
+    }
+  ];
+  
+
+  const swiperWrapper = document.getElementById("swiperWrapper");
+  let swiper;
+
+  function getSlidesPerView() {
+    const width = window.innerWidth;
+    if (width >= 1024) return 4;
+    if (width >= 768) return 2;
+    return 1;
+  }
+
+  function initSwiper() {
+    const slidesPerView = getSlidesPerView();
+    const enableLoop = reviewsData.length > slidesPerView;
+    const enableControls = reviewsData.length > slidesPerView;
+  
+    swiper = new Swiper(".swiper", {
+      slidesPerView: slidesPerView,
+      slidesPerGroup: slidesPerView,
+      spaceBetween: 20,
+      loop: enableLoop,
+      loopFillGroupWithBlank: enableLoop,
+      navigation: {
+        nextEl: ".swiper-button-next",
+        prevEl: ".swiper-button-prev"
+      },
+      pagination: {
+        el: ".swiper-pagination",
+        clickable: true
+      },
+      breakpoints: {
+        640: { slidesPerView: 1, slidesPerGroup: 1 },
+        768: { slidesPerView: 2, slidesPerGroup: 2 },
+        1024: { slidesPerView: 4, slidesPerGroup: 4 }
+      }
+    });
+  
+    // ✅ Use a delay to ensure DOM is ready
+    setTimeout(() => {
+      const swiperEl = document.querySelector(".swiper");
+      if (enableControls) {
+        swiperEl.classList.add("swiper-controls-visible");
+      } else {
+        swiperEl.classList.remove("swiper-controls-visible");
+      }
+    }, 0);
+  }
+  
+  
+
+  function renderSlides() {
+    swiperWrapper.innerHTML = "";
+    reviewsData.forEach((review) => {
+      const slide = document.createElement("div");
+      slide.className = "swiper-slide";
+      slide.innerHTML = `
+        <img src="${review.avatar || 'https://via.placeholder.com/60'}" class="review-avatar" alt="${review.name}" />
+        <div class="review-name">${review.name}</div>
+        <div class="review-stars">${"★".repeat(review.stars)}${"☆".repeat(5 - review.stars)}</div>
+        <div class="review-text">${review.text}</div>
+      `;
+      swiperWrapper.appendChild(slide);
+    });
+
+    if (swiper) swiper.destroy(true, true);
+    initSwiper();
+  }
+
+  function submitReview(e) {
+    e.preventDefault();
+    const name = document.getElementById("name").value.trim();
+    const stars = parseInt(document.getElementById("stars").value);
+    const text = document.getElementById("text").value.trim();
+    const avatarInput = document.getElementById("avatar");
+    const file = avatarInput.files[0];
+
+    if (!name || !stars || !text) {
+      alert("Please fill all required fields.");
+      return;
+    }
+
+    if (file) {
+      const reader = new FileReader();
+      reader.onload = function () {
+        const avatar = reader.result;
+        reviewsData.push({ name, avatar, stars, text });
+        renderSlides();
+        swiper.slideTo(reviewsData.length - 1);
+        document.querySelector(".review-form").reset();
+      };
+      reader.readAsDataURL(file);
+    } else {
+      const avatar = "https://via.placeholder.com/60";
+      reviewsData.push({ name, avatar, stars, text });
+      renderSlides();
+      swiper.slideTo(reviewsData.length - 1);
+      document.querySelector(".review-form").reset();
+    }
+  }
+
+  // On load
+  document.addEventListener("DOMContentLoaded", () => {
+    renderSlides();
+  });
+
+  // Optional: update Swiper on window resize
+  window.addEventListener("resize", () => {
+    renderSlides();
+  });
+
+
+
+
+  
