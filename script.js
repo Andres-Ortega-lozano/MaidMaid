@@ -210,10 +210,14 @@
       const slide = document.createElement("div");
       slide.className = "swiper-slide";
       slide.innerHTML = `
-        <img src="${review.avatar || 'https://via.placeholder.com/60'}" class="review-avatar" alt="${review.name}" />
-        <div class="review-name">${review.name}</div>
-        <div class="review-stars">${"★".repeat(review.stars)}${"☆".repeat(5 - review.stars)}</div>
-        <div class="review-text">${review.text}</div>
+        <div class="d-flex">
+          <img src="${review.avatar || 'https://via.placeholder.com/60'}" class="review-avatar" alt="${review.name}" />
+          <div style="margin-left: 1rem; align-items: center;" class="d-flex flex-wrap">
+            <div class="review-name w-100">${review.name}</div>
+            <div class="review-stars">${"★".repeat(review.stars)}${"☆".repeat(5 - review.stars)}</div>
+          </div>
+        </div>
+        <div class="review-text w-100"><q>${review.text}</q></div>
       `;
       swiperWrapper.appendChild(slide);
     });
@@ -266,5 +270,20 @@
 
 
 
-
+  document.addEventListener("DOMContentLoaded", function () {
+    const elements = document.querySelectorAll(".animate-on-scroll");
+  
+    const observer = new IntersectionObserver((entries, observer) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("visible");
+          observer.unobserve(entry.target); // animate once
+        }
+      });
+    }, {
+      threshold: 0.2, // trigger when 10% is visible
+    });
+  
+    elements.forEach(el => observer.observe(el));
+  });
   

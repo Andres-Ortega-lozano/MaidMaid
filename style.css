@@ -110,6 +110,61 @@ p {
   background-color: var(--first-color);
 }
 
+/************ animations *************/
+
+/* slide in from left to right */
+.slide-in-l-to-r {
+  opacity: 0;
+  transform: translateX(10%);
+  animation: slideInRight 1s ease-in-out forwards;
+}
+
+@keyframes slideInRight {
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* slide in from bottom to top */
+.slide-in-b-to-t {
+  opacity: 0;
+  transform: translateY(10%);
+  animation: slideInTop 1s ease-in-out forwards;
+}
+
+@keyframes slideInTop {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* flip top to bottom for header */
+.slide-in-t-to-b {
+  opacity: 0;
+  transform: translateY(-10%);
+  animation: slideInBottom 1s ease-in-out forwards;
+}
+@keyframes slideInBottom {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+
+.animate-on-scroll {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.animate-on-scroll.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
 /********************************** HEADER ***************************************/
 .container {
   margin-left: auto;
@@ -265,8 +320,9 @@ p {
   min-width: 120%;
   height: 100%;
   object-fit: cover;
-  margin-top: 10%;
+  margin-top: 50px;
   border-radius: 3rem 0 0 3rem;
+  object-position: center -50px;
 }
 
 .home-content {
@@ -311,14 +367,15 @@ p {
 .nav-tabs {
   display: flex;
   flex-wrap: wrap;
-  gap: 0px 60px;
-  background-color: var(--light-gray-color);
-  padding: 20px;
+  /* gap: 0px 60px; */
+  background-color: #DEE1E4;
+  padding: 30px;
   border-radius: 10px;
   box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
-  max-width: 1000px;
+  max-width: 1200px;
   width: 100%;
-  justify-content: center;
+  justify-content: space-between;
+  align-items: self-end;
   z-index: 2;
 }
 
@@ -333,14 +390,13 @@ p {
   width: 100%;
   display: flex;
   align-items: center;
-  margin-bottom: 0px;
+  margin-bottom: 15px;
 }
 
 .tab-header h4 {
   font-size: 1.4rem;
-  font-weight: 600;
+  font-weight: 100;
   display: flex;
-  align-items: center;
   gap: 10px;
 }
 
@@ -352,7 +408,7 @@ p {
 .tab-button {
   background-color: var(--light-gray-color);
   border: none;
-  border-left: 1px solid var(--black-color);
+  /* border-left: 1px solid var(--black-color); */
   padding: 12px 20px;
   border-radius: 6px;
   cursor: pointer;
@@ -470,7 +526,7 @@ p {
 /************************************************* SECTION ABOUT ****************************************/
 
 .about {
-  height: 80%;
+  /* height: 80%; */
 }
 
 .about-grid {
@@ -481,17 +537,19 @@ p {
 
 /* Row 1 */
 .empty-div {
-  height: 8rem;
+  height: 10rem;
   width: 100%;
-  background-color: var(--dark-gray-color);
+  margin-top: -4%;
+  background: #F6F7F9;
   grid-row: 1;
+  z-index: 1;
 }
 
 /* Row 2 */
 .about-info {
   text-align: center;
   grid-row: 2;
-  margin-top: 4rem;
+  margin: 4rem auto;
 }
 
 .about-info p {
@@ -500,9 +558,9 @@ p {
   text-align: center;
 }
 
-.about-info h1 {
+.section-title {
   color: var(--first-color);
-  margin-bottom: rem;
+  margin-bottom: 1rem;
   text-align: center;
 }
 
@@ -533,6 +591,7 @@ p {
   grid-template-columns: repeat(3, 1fr); /* 3 equal columns */
   gap: 1rem;
   width: 100%; /* ensure full width */
+  margin-bottom: 6rem;
 }
 
 .social {
@@ -548,12 +607,16 @@ p {
 
 .social h5 {
   color: var(--first-color);
+  font-size: 1.2rem;
 }
 .social-container * svg {
   fill: var(--first-color);
-  background-color: rgb(203, 198, 198);
-  padding: 10px; /* gives space around icon */
+  background-color: #DEE1E4;
+  padding: 24px; /* gives space around icon */
   border-radius: 10%;
+  width: 35px;
+  height: 35px;
+
 
   box-sizing: content-box;
 }
@@ -563,12 +626,7 @@ p {
 .reviews-section {
   padding: 60px 20px;
   text-align: center;
-  background-color: #f5f5f5;
-}
-
-.reviews-section h1 {
-  margin-bottom: 1.5rem;
-  color: var(--black-color);
+  background-color: #F6F7F9;
 }
 
 .reviews-section p {
@@ -586,12 +644,20 @@ p {
 }
 
 .swiper-slide {
-  background-color: #c9dde7;
+  background-color: var(--white-color);
   border-radius: 10px;
   padding: 20px;
-  max-width: 300px;
+  height: auto !important;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-  text-align: center;
+  display: flex !important;
+  flex-wrap: wrap;
+  min-width: 250px;
+  /* margin: auto 1rem; */
+}
+.swiper-wrapper{
+  height: 200px !important;
+  padding-bottom: 10px !important;
+  margin: 3rem auto;
 }
 
 .review-avatar {
@@ -605,16 +671,22 @@ p {
 .review-name {
   font-weight: bold;
   margin-bottom: 5px;
+  text-align: left;
 }
 
 .review-stars {
   color: #ffc107;
-  margin-bottom: 10px;
+  margin-left: -3px;
+  margin-top: -31px;
+
 }
 
 .review-text {
   font-size: 0.95rem;
   color: var(--black-color);
+  font-weight: 100;
+  text-align: justify;
+  margin-top: 10px;
 }
 
 .review-form {
@@ -660,14 +732,14 @@ p {
 .swiper-button-next,
 .swiper-button-prev,
 .swiper-pagination {
-  display: block !important;
-  z-index: 10;
+  /* display: block !important; */
+  /* z-index: 10; */
 }
 
 .swiper-controls-visible .swiper-button-next,
 .swiper-controls-visible .swiper-button-prev,
 .swiper-controls-visible .swiper-pagination {
-  display: block;
+  /* display: block; */
 }
 
 .swiper-button-next,
@@ -683,8 +755,8 @@ p {
 
 .contact-section {
   max-width: 1200px;
-  margin: 0 auto;
-  padding: 4rem 0rem;
+  margin: 4rem auto;
+  padding: 6rem 0rem;
   text-align: center;
 }
 
@@ -713,7 +785,7 @@ p {
   display: flex;
   flex-direction: column;
   gap: 3rem;
-  margin-top: 6rem;
+  margin-top: 4rem;
 }
 
 .contact-info aside {
@@ -736,6 +808,12 @@ p {
 }
 .contact-info h4 {
   margin-bottom: 0.5rem;
+  font-size: 1.2rem;
+  font-weight: 500;
+}
+.contact-info p {
+  font-size: 1rem;
+  font-weight: 100;
 }
 
 /************************************************** multiple img SECTION ********************************************/
