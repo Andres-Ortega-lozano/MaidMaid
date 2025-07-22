@@ -34,6 +34,7 @@
 
     <!-- Flatpickr JS -->
     <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+    <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
 
     <link
       rel="stylesheet"
@@ -43,7 +44,7 @@
   <body>
     <!-- header -->
     <header class="header">
-      <section class="container">
+      <section class="container slide-in-t-to-b">
           <div class="logo">
             <a href="#about">
               <img src="assets/logos/logo_small.png" alt="MaidMaid Logo" />
@@ -93,23 +94,25 @@
     <section id="home" class="home full-lg-screen">
       <article class="container">
         <div class="home-content">
-          <p style="font-size: 1rem; font-weight: 100;">MaidMaid - House Cleaning services</p>
-          <h1 style="font-size: 4rem; font-weight: bold; margin: 3rem auto 2rem auto;">LET US DO THE DIRTY WORK</h1>
+          <p style="font-size: 1rem; font-weight: 100;" class="slide-in-b-to-t">MaidMaid - House Cleaning services</p>
+          <h1 style="font-size: 4rem; font-weight: bold; margin: 3rem auto 2rem auto;" class="slide-in-b-to-t">LET US DO THE DIRTY WORK</h1>
           <p style= "font-size: 1rem;
             font-weight: 100;
-            color: var(--light-white-color);">
+            color: var(--light-white-color);"
+            class="slide-in-b-to-t"
+            >
             From kitchens to carpets, we leave every room sparkling and
             stress-free. Book a trusted reliable cleaner with flexible
             scheduling and flat-rate pricing.
           </p>
 
-          <div class="home-buttons">
+          <div class="home-buttons slide-in-b-to-t">
             <button class="book-btn">Book Now</button>
             <a class="btn" href="#">How it Works</a>
           </div>
         </div>
 
-        <div class="home-image">
+        <div class="home-image slide-in-l-to-r">
           <img src="assets/img/clean_house.jpg" alt="Cleaning Service" />
         </div>
       </article>
@@ -119,45 +122,39 @@
 
     <!----------------------------------------- MIDDLE SECTION WITH NAV-TABS ----------------------------------->
     <section id="middle">
-      <div class="nav-tabs">
+      <div class="nav-tabs animate-on-scroll">
         <div class="tab-header">
           <h4>
-            <span class="tab-icon">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="16"
-                height="16"
-                fill="currentColor"
-                class="bi bi-plus-circle-dotted"
-                viewBox="0 0 16 16"
-              >
-                <path
-                  d="M8 0q-.264 0-.523.017l.064.998a7 7 0 0 1 .918 0l.064-.998A8 8 0 0 0 8 0M6.44.152q-.52.104-1.012.27l.321.948q.43-.147.884-.237L6.44.153zm4.132.271a8 8 0 0 0-1.011-.27l-.194.98q.453.09.884.237zm1.873.925a8 8 0 0 0-.906-.524l-.443.896q.413.205.793.459zM4.46.824q-.471.233-.905.524l.556.83a7 7 0 0 1 .793-.458zM2.725 1.985q-.394.346-.74.74l.752.66q.303-.345.648-.648zm11.29.74a8 8 0 0 0-.74-.74l-.66.752q.346.303.648.648zm1.161 1.735a8 8 0 0 0-.524-.905l-.83.556q.254.38.458.793l.896-.443zM1.348 3.555q-.292.433-.524.906l.896.443q.205-.413.459-.793zM.423 5.428a8 8 0 0 0-.27 1.011l.98.194q.09-.453.237-.884zM15.848 6.44a8 8 0 0 0-.27-1.012l-.948.321q.147.43.237.884zM.017 7.477a8 8 0 0 0 0 1.046l.998-.064a7 7 0 0 1 0-.918zM16 8a8 8 0 0 0-.017-.523l-.998.064a7 7 0 0 1 0 .918l.998.064A8 8 0 0 0 16 8M.152 9.56q.104.52.27 1.012l.948-.321a7 7 0 0 1-.237-.884l-.98.194zm15.425 1.012q.168-.493.27-1.011l-.98-.194q-.09.453-.237.884zM.824 11.54a8 8 0 0 0 .524.905l.83-.556a7 7 0 0 1-.458-.793zm13.828.905q.292-.434.524-.906l-.896-.443q-.205.413-.459.793zm-12.667.83q.346.394.74.74l.66-.752a7 7 0 0 1-.648-.648zm11.29.74q.394-.346.74-.74l-.752-.66q-.302.346-.648.648zm-1.735 1.161q.471-.233.905-.524l-.556-.83a7 7 0 0 1-.793.458zm-7.985-.524q.434.292.906.524l.443-.896a7 7 0 0 1-.793-.459zm1.873.925q.493.168 1.011.27l.194-.98a7 7 0 0 1-.884-.237zm4.132.271a8 8 0 0 0 1.012-.27l-.321-.948a7 7 0 0 1-.884.237l.194.98zm-2.083.135a8 8 0 0 0 1.046 0l-.064-.998a7 7 0 0 1-.918 0zM8.5 4.5a.5.5 0 0 0-1 0v3h-3a.5.5 0 0 0 0 1h3v3a.5.5 0 0 0 1 0v-3h3a.5.5 0 0 0 0-1h-3z"
-                />
-              </svg>
-            </span>
-            Schedule your service
+            <i data-feather="calendar" class="tab-icon"></i>
+            Schedule Your Service
           </h4>
         </div>
 
         <!-- Location -->
-        <button class="tab-button" id="openLocationModal">
-          <span id="locationLabel">Locations</span>
-          <span class="arrow">&#9662;</span>
-        </button>
-
-        <!-- Date -->
-        <button class="tab-button" id="openDateModal">
-          <span id="dateLabel">Date</span> <span class="arrow">&#9662;</span>
-        </button>
-
-        <!-- Time -->
-        <button class="tab-button" id="openTimeModal">
-          <span id="timeLabel">Time</span> <span class="arrow">&#9662;</span>
-        </button>
+         <div class="col-md-3 col-12">
+            <div class="location-label">Location</div>
+            <button class="tab-button w-100" id="openLocationModal">
+              <span id="locationLabel">Select your city</span>
+              <span class="arrow">&#9662;</span>
+            </button>
+         </div>
+         <div class="col-md-3 col-12">
+            <!-- Date -->
+            <div class="date-label">Date</div>
+            <button class="tab-button w-100" id="openDateModal">
+              <span id="dateLabel">Select your date</span> <span class="arrow">&#9662;</span>
+            </button>
+         </div>
+         <div class="col-md-3 col-12">
+            <!-- Time -->
+            <div class="time-label">Time</div>
+            <button class="tab-button w-100" id="openTimeModal">
+              <span id="timeLabel">Select your time</span> <span class="arrow">&#9662;</span>
+            </button>
+         </div>
 
         <!-- Book -->
-        <button class="book-btn">Book Now</button>
+        <button class="book-btn" style="max-height: 45px;">Book Now</button>
       </div>
     </section>
 
@@ -208,19 +205,16 @@
         <div class="empty-div"></div>
 
         <!-- Second row -->
-        <aside class="about-info">
-          <h1>How it Works?</h1>
+        <aside class="about-info animate-on-scroll">
+          <h1 class="section-title">How it Works?</h1>
 
           <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Maiores
-            aliquid sit saepe labore reiciendis vero magnam dignissimos sed
-            tenetur, possimus pariatur neque nobis in dolorem vel laborum,
-            repudiandae quaerat quia!
+            Booking your cleaning is quick and easy! First, choose your location, then pick a date and time that works best for your schedule. Once you’re set, just pay the initial fee to confirm your appointment — and you’re all set! We’ll take care of the rest.
           </p>
         </aside>
 
         <!-- Third row (3 columns) -->
-        <div class="social-row">
+        <div class="social-row animate-on-scroll">
           <div class="social-container">
             <aside class="social">
               <svg
@@ -316,57 +310,54 @@
       </article>
     </section>
 
-    <!------------------------------------------ REVIEW SECTION ----------------------------------------->
 
+    <!-- This section should have our services -->
     <section class="reviews-section">
-      <h1>Customer Reviews</h1>
-      <p>Swipe through our customer testimonials below.</p>
-
-      <!-- Swiper Container -->
-      <div class="swiper">
-        <div class="swiper-wrapper" id="swiperWrapper">
-          <!-- Slides injected via JS -->
+      <h1 class="section-title animate-on-scroll">Stress-Free Cleaning Services for Busy Lives</h1>
+      <p class="animate-on-scroll">Let us handle the mess while you enjoy more free time. We offer recurring, one-time, and move-in/out cleaning services designed for your lifestyle.</p>
+      <div class="row">
+        <div class="col-sm-6 col-12">
+          <img src="assets/img/spray.jpg" alt="spray" />
+          <h3>Standard Cleaning</h3>
+          <p>Perfect for regular upkeep. We dust, vacuum, mop, and sanitize all key areas of your home to keep it fresh and tidy.</p>
         </div>
-        <!-- Controls -->
-        <div class="swiper-button-prev"></div>
-        <div class="swiper-button-next"></div>
-        <div class="swiper-pagination"></div>
-      </div>
 
-      <!-- Add Review Form -->
-      <form class="review-form" onsubmit="submitReview(event)">
-        <h3>Leave a Review</h3>
-        <input type="text" id="name" placeholder="Your Name" required />
-        <input type="file" id="avatar" accept="image/*" />
-        <select id="stars" required>
-          <option value="">Rating</option>
-          <option value="5">★★★★★</option>
-          <option value="4">★★★★☆</option>
-          <option value="3">★★★☆☆</option>
-          <option value="2">★★☆☆☆</option>
-          <option value="1">★☆☆☆☆</option>
-        </select>
-        <textarea
-          id="text"
-          placeholder="Write your review..."
-          rows="4"
-          required
-        ></textarea>
-        <button type="submit">Submit Review</button>
-      </form>
+        <div class="col-sm-6 col-12">
+          <img src="assets/img/vaccum.jpg" alt="vaccum" />
+          <h3>Deep Cleaning</h3>
+          <p>Ideal for first-time visits or seasonal cleanups. We go beyond the surface to scrub hard-to-reach areas, baseboards, behind appliances, and more.</p>
+        </div>
+
+        <div class="col-sm-6 col-12">
+          <img src="assets/img/vaccum.jpg" alt="vaccum" />
+          <h3>Move-In/Out Cleaning</h3>
+          <p>Start fresh in your new home with a detailed top-to-bottom clean. We ensure every room is spotless before you settle in.</p>
+        </div>
+
+        <div class="col-sm-6 col-12">
+          <img src="assets/img/vaccum.jpg" alt="vaccum" />
+          <h3>Vacation Rental / Airbnb Cleaning</h3>
+          <p>Quick turnaround and high standards for short-term rental hosts. We reset and refresh your space between guests.</p>
+        </div>
+
+
+      </div>
     </section>
 
+
+    <!-- info section -->
+
     <section class="contact-section">
-      <h1>Lorem ipsum dolor sit amet</h1>
-      <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit.</p>
+      <h1 class="section-title animate-on-scroll">Professional House Cleaning You Can Trust</h1>
+      <p class="animate-on-scroll">Keep your home sparkling clean with our reliable and experienced cleaning team. Affordable rates, flexible scheduling, and satisfaction guaranteed.</p>
 
       <div class="grid-wrapper">
-        <div class="contact-image">
-          <img src="assets/cleaning-service.jpeg" alt="" />
+        <div class="contact-image animate-on-scroll" style="height: 100%;">
+          <img src="assets/img/clean_kitchen2.jpg" alt="really clean kitchen" />
         </div>
 
         <div class="contact-info">
-          <aside>
+          <aside class="animate-on-scroll">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               width="16"
@@ -381,11 +372,11 @@
             </svg>
             <ul>
               <h4>Customer Support</h4>
-              <p>Lorem ipsum dolor sit amet consectetur.</p>
+              <p>Our dedicated support team is here to help you with any questions or concerns you may have. We're always here to assist you.</p>
             </ul>
           </aside>
 
-          <aside>
+          <aside class="animate-on-scroll">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               width="16"
@@ -402,12 +393,12 @@
               />
             </svg>
             <ul>
-              <h4>Best Price Guarantted</h4>
-              <p>Lorem ipsum dolor sit amet consectetur.</p>
+              <h4>Best Price Guaranteed</h4>
+              <p>We offer competitive pricing without compromising on quality. Our transparent pricing ensures you get the best value for your money.</p>
             </ul>
           </aside>
 
-          <aside>
+          <aside class="animate-on-scroll">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               width="16"
@@ -423,23 +414,53 @@
             </svg>
             <ul>
               <h4>Many Locations</h4>
-              <p>Lorem ipsum dolor sit amet consectetur.</p>
+              <p>We serve customers in multiple locations. Whether you're in the city or suburbs, we're here to help you keep your home clean and tidy.</p>
             </ul>
           </aside>
         </div>
       </div>
     </section>
 
-    <section class="multiple-image-section">
-      <div class="grid-wrapper2">
-        <div class="contact-image2">
-          <img src="assets/cleaning-service.jpeg" alt="" />
-        </div>
-        <div class="contact-image2">
-          <img src="assets/cleaning-service.jpeg" alt="" />
-        </div>
-      </div>
-    </section>
+        <!------------------------------------------ REVIEW SECTION ----------------------------------------->
+
+        <section class="reviews-section">
+          <h1 class="section-title animate-on-scroll">Trusted by Thousands of 
+            Happy Customer</h1>
+          <p class="animate-on-scroll">Swipe through our customer testimonials below.</p>
+    
+          <!-- Swiper Container -->
+          <div class="swiper animate-on-scroll">
+            <div class="swiper-wrapper" id="swiperWrapper">
+              <!-- Slides injected via JS -->
+            </div>
+            <!-- Controls -->
+            <!-- <div class="swiper-button-prev"></div> -->
+            <!-- <div class="swiper-button-next"></div> -->
+            <div class="swiper-pagination"></div>
+          </div>
+    
+          <!-- Add Review Form -->
+          <!-- <form class="review-form" onsubmit="submitReview(event)">
+            <h3>Leave a Review</h3>
+            <input type="text" id="name" placeholder="Your Name" required />
+            <input type="file" id="avatar" accept="image/*" />
+            <select id="stars" required>
+              <option value="">Rating</option>
+              <option value="5">★★★★★</option>
+              <option value="4">★★★★☆</option>
+              <option value="3">★★★☆☆</option>
+              <option value="2">★★☆☆☆</option>
+              <option value="1">★☆☆☆☆</option>
+            </select>
+            <textarea
+              id="text"
+              placeholder="Write your review..."
+              rows="4"
+              required
+            ></textarea>
+            <button type="submit">Submit Review</button>
+          </form> -->
+        </section>
 
     <!------------------------------------- FOOTER -------------------------------------->
 
@@ -551,5 +572,8 @@
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 
     <script src="script.js"></script>
+    <script>
+      feather.replace();
+    </script>
   </body>
 </html>
